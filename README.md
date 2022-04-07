@@ -1,12 +1,12 @@
 # Service-Scheduler
 
-Service Scheduler is a BASH script that enables or disables services.
-The scheduler is designed to stop services during events and start
-them as soon as it they are allowed to run.
+Service Scheduler is a BASH script that enables or disables services.<br>
+The scheduler is designed to stop services during events and start<br>
+them as soon as it they are allowed to run.<br>
 
-The scheduler allows for two types of schedules:
-1) Day of the week. You can schedule services on fixed week days.
-2) Scheduled events. You can schedule events that span several days.
+The scheduler allows for two types of schedules:<br>
+1) Day of the week. You can schedule services on fixed week days.<br>
+2) Scheduled events. You can schedule events that span several days.<br>
 
 ## Installation
 1. Clone the project to your local machine
@@ -19,23 +19,20 @@ cd Service-Scheduler
 4. Install the scheduler: `./setup.sh`
 
 ## Configuration
-All configuration settings can be found in `settings.json`. Please make sure
+All configuration settings can be found in `settings.json`. Please make sure<br>
 to create a backup of this file after you are satisfied with your configuration.
 
 ### daemon
-Options: (0|1)
-
+Options: (0|1)<br>
 0. Run the service checks one time and then quit the script.
 1. Run the service checks in a loop so we can run as a background daemon.
 
 ### interval
-Options: (n-seconds)
-
+Options: (n-seconds)<br>
 Sets the interval between service checks in seconds. Default setting is 60 seconds.
 
 ### logfile
-Options: (filename)
-
+Options: (filename)<br>
 Sets the location of the logfile.
 
 ### services
@@ -49,21 +46,20 @@ Options:<br>
 `stop.post` (Optional) A list of scripts that must be run after stopping the service.<br>
 
 ### dayofweek
-List of days of the week on which the service(s) should be stopped and disabled.
+List of days of the week on which the service(s) should be stopped and disabled.<br>
 This list is optional. Please note that 0=Sunday and 6=Saterday.
 
 ### schedules
-List of schedules that on which the service(s) should be stopped and disabled.
+List of schedules that on which the service(s) should be stopped and disabled.<br>
+Options:<br>
+`name` (Optional) Name of the event.<br>
+`from.date` (Mandatory) Date on which the event starts.<br>
+`from.time` (Optional) Time on which the event starts.<br>
+`to.date` (Mandatory) Date on which the event stops.<br>
+`to.time` (Optional) Time on which the event stops.<br>
 
-Options:
-`name` (Optional) Name of the event.
-`from.date` (Mandatory) Date on which the event starts.
-`from.time` (Optional) Time on which the event starts.
-`to.date` (Mandatory) Date on which the event stops.
-`to.time` (Optional) Time on which the event stops.
-
-Date format: YYYY-MM-DD
-Time format: HH:MM:SS
+Date format: YYYY-MM-DD<br>
+Time format: HH:MM:SS<br>
 
 Please note that all times are consolidated and converted to EPOCH via date. Times are
 optional as date defaults to 00 when elements for time are not set.
