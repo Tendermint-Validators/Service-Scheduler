@@ -1,8 +1,8 @@
 # Service-Scheduler
 
-Service Scheduler is a BASH script that enables or disables services. The scheduler
-is designed to stop services during religous events and start them as soon as it they
-are allowed to run.
+Service Scheduler is a BASH script that enables or disables services.
+The scheduler is designed to stop services during events and start
+them as soon as it they are allowed to run.
 
 The scheduler allows for two types of schedules:
 1) Day of the week. You can schedule services on fixed week days.
@@ -31,14 +31,17 @@ Options: (0|1)
 
 ### interval
 Options: (n-seconds)
+
 Sets the interval between service checks in seconds. Default setting is 60 seconds.
 
 ### logfile
 Options: <filename>
+
 Sets the location of the logfile.
 
 ### services
 List of services that should be controlled by the script.
+
 Options:
 `name` (Mandatory) Name of the service as Systemd expects it.
 `start.pre` (Optional) A list of scripts that must be run before starting the service.
@@ -52,6 +55,7 @@ This list is optional. Please note that 0=Sunday and 6=Saterday.
 
 ### schedules
 List of schedules that on which the service(s) should be stopped and disabled.
+
 Options:
 `name` (Optional) Name of the event.
 `from.date` (Mandatory) Date on which the event starts.
