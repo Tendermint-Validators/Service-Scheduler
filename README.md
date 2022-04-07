@@ -15,6 +15,9 @@ git clone git@github.com:Tendermint-Validators/Service-Scheduler.git
 cd Service-Scheduler
 ```
 2. (Optional) Create a branch for your configuration.
+```
+git checkout -b production
+```
 3. Customize the configuration file `settings.json` for your own needs.
 4. Install the scheduler: `./setup.sh`
 
