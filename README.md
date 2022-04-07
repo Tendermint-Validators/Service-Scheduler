@@ -1,9 +1,7 @@
 # Service-Scheduler
 
 Service Scheduler is a BASH script that enables or disables services.
-
 The scheduler is designed to stop services during events and start
-
 them as soon as it they are allowed to run.
 
 The scheduler allows for two types of schedules:
