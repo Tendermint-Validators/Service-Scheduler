@@ -19,6 +19,8 @@ cd Service-Scheduler
 4. Install the scheduler: `./setup.sh`
 
 ## Configuration
+All configuration settings can be found in `settings.json`. Please make sure
+to create a backup of this file after you are satisfied with your configuration.
 
 ### daemon
 Options: (0|1)
@@ -32,7 +34,7 @@ Options: (n-seconds)
 Sets the interval between service checks in seconds. Default setting is 60 seconds.
 
 ### logfile
-Options: <filename>
+Options: (filename)
 
 Sets the location of the logfile.
 
@@ -40,11 +42,13 @@ Sets the location of the logfile.
 List of services that should be controlled by the script.
 
 Options:
-`name` (Mandatory) Name of the service as Systemd expects it.
-`start.pre` (Optional) A list of scripts that must be run before starting the service.
-`start.post` (Optional) A list of scripts that must be run after starting the service.
-`stop.pre` (Optional) A list of scripts that must be run before stopping the service.
-`stop.post` (Optional) A list of scripts that must be run after stopping the service.
+```
+*name* (Mandatory) Name of the service as Systemd expects it.
+*start.pre* (Optional) A list of scripts that must be run before starting the service.
+*start.post* (Optional) A list of scripts that must be run after starting the service.
+*stop.pre* (Optional) A list of scripts that must be run before stopping the service.
+*stop.post* (Optional) A list of scripts that must be run after stopping the service.
+```
 
 ### dayofweek
 List of days of the week on which the service(s) should be stopped and disabled.
