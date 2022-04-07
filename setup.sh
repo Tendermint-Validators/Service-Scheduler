@@ -69,7 +69,7 @@ systemctl is-enabled servicescheduler &> /dev/null || {
 # Ensure that the service is running.
 systemctl is-active servicescheduler &> /dev/null || {
   echo -e "Starting service."
-#  systemctl start servicescheduler
+  systemctl start servicescheduler
 }
 
 echo -e "Setup completed successfully."

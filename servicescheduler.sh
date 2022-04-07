@@ -132,8 +132,8 @@ function check_schedules() {
         # Test if NOW is in the schedule.
         if [ "$FROM" -lt "$NOW" ] && [ "$TO" -gt "$NOW" ]
         then
-	  log "Schedule $NAME matches current date."
-  	  # Set the flag to ensure that the services are disabled.
+          log "Schedule $NAME matches current date."
+          # Set the flag to ensure that the services are disabled.
           RETVAL=1
         fi
       else
@@ -202,10 +202,10 @@ function set_servicestate() {
         SCRIPT=$(jq -r ".services[$COUNTER].start.pre[$C]" $CONFIG)
 
         # Run the script.
-	run_script "$SCRIPT" 
+        run_script "$SCRIPT" 
 
         # Update the counter.
-	C=$((C + 1))
+        C=$((C + 1))
       done
 
       # Ensure that the service is enabled.
@@ -231,7 +231,7 @@ function set_servicestate() {
         run_script "$SCRIPT"
 
         # Update the counter.
-	C=$((C + 1))
+        C=$((C + 1))
       done
     else
       # Ensure that the service is stopped and disabled.
@@ -246,7 +246,7 @@ function set_servicestate() {
         run_script "$SCRIPT"
 
         # Update the counter.
-	C=$((C + 1))
+        C=$((C + 1))
       done
 
       # Ensure that the service is disabled.
@@ -272,7 +272,7 @@ function set_servicestate() {
         run_script "$SCRIPT"
 
         # Update the counter.
-	C=$((C + 1))
+        C=$((C + 1))
       done
     fi
 

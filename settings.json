@@ -9,15 +9,15 @@
       "start": {
         "pre": [],
         "post": [
-	  "/usr/bin/echo waitforsync",
-	  "/usr/bin/echo unslash validator"
-	]
+          "/usr/bin/echo waitforsync",
+          "/usr/bin/echo unslash validator"
+        ]
       },
       "stop": {
-	"pre": [
-	  "/usr/bin/echo update statesync block height"
-	],
-	"post": []
+        "pre": [
+          "/usr/bin/echo update statesync block height"
+        ],
+        "post": []
       }
     }
   ],
@@ -37,12 +37,12 @@
     {
       "name": "Example 2",
       "from": {
-	"date": "2022-04-06",
-	"time": "00:00"
+        "date": "2022-04-06",
+        "time": "00:00"
       },
       "to": {
-	"date": "2022-04-08",
-	"time": "00:00"
+        "date": "2022-04-08",
+        "time": "00:00"
       }
     }
   ]
