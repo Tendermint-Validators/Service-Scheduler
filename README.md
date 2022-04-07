@@ -9,17 +9,14 @@ The scheduler allows for two types of schedules:
 2) Scheduled events. You can schedule events that span several days.
 
 ## Installation
-Clone the project to your local machine
-```git clone git@github.com:Tendermint-Validators/Service-Scheduler.git
+1. Clone the project to your local machine
+```
+git clone git@github.com:Tendermint-Validators/Service-Scheduler.git
 cd Service-Scheduler
 ```
-
-(Optional) Create a branch for your configuration.
-
-Customize the configuration file `settings.json` for your own needs.
-
-Install the scheduler:
-```./setup.sh```
+2. (Optional) Create a branch for your configuration.
+3. Customize the configuration file `settings.json` for your own needs.
+4. Install the scheduler: `./setup.sh`
 
 ## Configuration
 
