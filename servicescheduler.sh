@@ -281,6 +281,17 @@ function set_servicestate() {
   done
 }
 
+function set_timezone() {
+  # Check if the timezone is set correctly.
+  if [ "$(file --brief /etc/localtime | cut -f4 -d' ')" != "/usr/share/zoneinfo/$TIMEZONE" ]
+  then
+    log "Updating timezone to $TIMEZONE"
+
+    # Update the timezone.
+    ln -s "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
+  fi
+}
+
 function main() {
   # Test if we need to enable or disable services.
   if check_dayofweek
@@ -315,6 +326,10 @@ jq -r '.' $CONFIG &> /dev/null || error "Configuration file $CONFIG is not valid
 LOGFILE=$(jq -r '.logfile' $CONFIG)
 DAEMON=$(jq -r '.daemon' $CONFIG)
 INTERVAL=$(jq -r '.interval' $CONFIG)
+TIMEZONE=$(jq -r '.timezone' $CONFIG)
+
+# Ensure that the timezone is set correctly.
+set_timezone
 
 # Test if we are running as a daemon.
 if [ "$DAEMON" == 1 ]
