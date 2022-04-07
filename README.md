@@ -28,6 +28,7 @@ to ensure that you don't loose it by overwriting.
 
 ### daemon
 Options: (0|1)<br>
+
 0. Run the service checks one time and then quit the script.
 1. Run the service checks in a loop so we can run as a background daemon.
 
