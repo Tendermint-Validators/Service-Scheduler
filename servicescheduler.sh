@@ -62,7 +62,7 @@ function validate_date() {
 
 function check_dayofweek() {
   # Set the default return value.
-  RETVAL=0
+  RETVAL=1
 
   # Loop over the day of the week to see if the services must be enabled or disabled.
   COUNTER=0
@@ -76,10 +76,10 @@ function check_dayofweek() {
     then
       # Set flag to disable the services.
       log "Day of week $DOW found"
-      RETVAL=1
+      RETVAL=0
     fi
 
-    # Update the counter.
+    # Update counter.
     COUNTER=$((COUNTER + 1))
   done
 
@@ -88,7 +88,7 @@ function check_dayofweek() {
 
 function check_schedules() {
   # Set default return value.
-  RETVAL=0
+  RETVAL=1
 
   # Loop over schedules to see if the services must be enabled or disabled.
   COUNTER=0
@@ -134,7 +134,7 @@ function check_schedules() {
         then
           log "Schedule $NAME matches current date."
           # Set the flag to ensure that the services are disabled.
-          RETVAL=1
+          RETVAL=0
         fi
       else
         error "Schedule $NAME is not valid."
@@ -204,7 +204,7 @@ function set_servicestate() {
         # Run the script.
         run_script "$SCRIPT" 
 
-        # Update the counter.
+        # Update counter.
         C=$((C + 1))
       done
 
@@ -230,7 +230,7 @@ function set_servicestate() {
         # Run the script.
         run_script "$SCRIPT"
 
-        # Update the counter.
+        # Update counter.
         C=$((C + 1))
       done
     else
@@ -245,7 +245,7 @@ function set_servicestate() {
         # Run the script.
         run_script "$SCRIPT"
 
-        # Update the counter.
+        # Update counter.
         C=$((C + 1))
       done
 
@@ -271,24 +271,22 @@ function set_servicestate() {
         # Run the script.
         run_script "$SCRIPT"
 
-        # Update the counter.
+        # Update counter.
         C=$((C + 1))
       done
     fi
 
-    # Update the counter.
+    # Update counter.
     COUNTER=$((COUNTER + 1))
   done
 }
 
 function main() {
   # Test if we need to enable or disable services.
-  # ENABLE_SERVICES=0 => Services should be running and enabled.
-  # ENABLE_SERVICES=1 => Services should be stopped and disabled.
-  if ! check_dayofweek
+  if check_dayofweek
   then
     ENABLE_SERVICES=1
-  elif ! check_schedules
+  elif check_schedules
   then
     ENABLE_SERVICES=1
   else
