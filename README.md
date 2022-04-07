@@ -20,7 +20,8 @@ cd Service-Scheduler
 
 ## Configuration
 All configuration settings can be found in `settings.json`. Please make sure<br>
-to create a backup of this file after you are satisfied with your configuration.
+to create a backup of this file after you are satisfied with your configuration<br>
+to ensure that you don't loose it by overwriting.
 
 ### daemon
 Options: (0|1)<br>
@@ -61,10 +62,10 @@ Options:<br>
 Date format: YYYY-MM-DD<br>
 Time format: HH:MM:SS<br>
 
-Please note that all times are consolidated and converted to EPOCH via date. Times are
+Please note that all times are consolidated and converted to EPOCH via date. Times are<br>
 optional as date defaults to 00 when elements for time are not set.
 
-HH is allowed and will default to HH:00:00
-HH:MM is allowed and will default to HH:MM:00
-Optionally HH:MM:SS is available to use but would require timing with the interval if you
+HH is allowed and will default to HH:00:00<br>
+HH:MM is allowed and will default to HH:MM:00<br>
+Optionally HH:MM:SS is available to use but would require timing with the interval if you<br>
 need any sort of precision.
