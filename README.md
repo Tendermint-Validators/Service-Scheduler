@@ -41,12 +41,12 @@ Sets the location of the logfile.
 ### services
 List of services that should be controlled by the script.
 
-Options:
-*name* (Mandatory) Name of the service as Systemd expects it.
-*start.pre* (Optional) A list of scripts that must be run before starting the service.
-*start.post* (Optional) A list of scripts that must be run after starting the service.
-*stop.pre* (Optional) A list of scripts that must be run before stopping the service.
-*stop.post* (Optional) A list of scripts that must be run after stopping the service.
+Options:<br>
+*name* (Mandatory) Name of the service as Systemd expects it.<br>
+*start.pre* (Optional) A list of scripts that must be run before starting the service.<br>
+*start.post* (Optional) A list of scripts that must be run after starting the service.<br>
+*stop.pre* (Optional) A list of scripts that must be run before stopping the service.<br>
+*stop.post* (Optional) A list of scripts that must be run after stopping the service.<br>
 
 ### dayofweek
 List of days of the week on which the service(s) should be stopped and disabled.
