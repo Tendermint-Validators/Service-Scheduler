@@ -1,0 +1,49 @@
+{
+  "daemon": 1,
+  "interval": 60,
+  "logfile": "/var/log/service-scheduler.log",
+  "loglevel": 5,
+  "services": [
+    {
+      "name": "TestService",
+      "start": {
+        "pre": [],
+        "post": [
+	  "/usr/bin/echo waitforsync",
+	  "/usr/bin/echo unslash validator"
+	]
+      },
+      "stop": {
+	"pre": [
+	  "/usr/bin/echo update statesync block height"
+	],
+	"post": []
+      }
+    }
+  ],
+  "dayofweek": [6],
+  "schedules": [
+    {
+      "name": "Example 1",
+      "from": {
+        "date": "2022-12-19",
+        "time": "00:00"
+      },
+      "to": {
+        "date": "2022-12-20",
+        "time": "01:00"
+      }
+    },
+    {
+      "name": "Example 2",
+      "from": {
+	"date": "2022-04-06",
+	"time": "00:00"
+      },
+      "to": {
+	"date": "2022-04-08",
+	"time": "00:00"
+      }
+    }
+  ]
+}

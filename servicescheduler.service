@@ -1,0 +1,15 @@
+[Unit]
+Description=Service Scheduler
+After=network.target
+
+[Service]
+Group=root
+User=root
+WorkingDirectory=
+ExecStart=
+Restart=always
+TimeoutStopSec=300
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
