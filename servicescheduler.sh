@@ -106,9 +106,9 @@ function check_schedules() {
 
     [ "$NAME" == "null" ] && NAME="$COUNTER"
     [ "$FROM_DATE" == "null" ] && INVALIDATE_SCHEDULE=1
-    [ "$FROM_TIME" == "null" ] && INVALIDATE_SCHEDULE=1
+    [ "$FROM_TIME" == "null" ] && FROM_TIME=""
     [ "$TO_DATE" == "null" ] && INVALIDATE_SCHEDULE=1
-    [ "$TO_TIME" == "null" ] && INVALIDATE_SCHEDULE=1
+    [ "$TO_TIME" == "null" ] && TO_TIME=""
 
     # Only process valid schedules.
     if [ "$INVALIDATE_SCHEDULE" == 0 ]
