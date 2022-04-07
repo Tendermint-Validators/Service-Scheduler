@@ -2,7 +2,6 @@
   "daemon": 1,
   "interval": 60,
   "logfile": "/var/log/service-scheduler.log",
-  "loglevel": 5,
   "services": [
     {
       "name": "TestService",
