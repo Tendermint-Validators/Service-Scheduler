@@ -322,8 +322,17 @@ then
   # Start an endless loop.
   while true
   do
+    # Store timestamp.
+    START=$(date +%s)
+
+    # Run the main function.
     main
-    sleep "$INTERVAL"
+
+    # Wait for the next loop.
+    while [ "$(date +%s)" -lt "$((START + INTERVAL))" ]
+    do
+      sleep 1
+    done
   done
 else
   main
